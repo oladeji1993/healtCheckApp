@@ -254,6 +254,8 @@ tbody td{
         width: 100%;
     }
 
+    
+
     .card{
         margin-bottom:7%;
     }
@@ -264,7 +266,9 @@ tbody td{
 @media only screen and (max-width: 600px) {
     #analysis-card{
         display: flex;
-        text-align:center;
+        justify-content:center !important;
+        align-items:center;
+        text-align:center !important;
         margin: 0 auto;
         width: 100%;
     }
@@ -275,6 +279,10 @@ tbody td{
 
     select{
         margin-bottom:15px;
+    }
+
+    .home-wrapper{
+        padding:0px;
     }
 
 
