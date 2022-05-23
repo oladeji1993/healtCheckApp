@@ -1,0 +1,19 @@
+#body{
+    overflow-y: scroll;
+    height:calc(100vh - 70px);
+    background-color: #F1F3F5;
+}
+
+:host{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+mat-drawer-container{
+    height:100%
+}
+
+mat-drawer-content {
+    overflow: hidden;
+}

@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500&family=Nunito+Sans:ital,wght@0,400;1,300&display=swap');
+
+*{
+    font-family: 'Mulish', sans-serif;
+}
+
+
+.modal-mask {
+    position: fixed;
+    z-index: 9998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: table;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  .modal-wapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+  .header-title {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .close-modal {
+    cursor: pointer;
+  }

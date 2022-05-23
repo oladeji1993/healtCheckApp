@@ -1,0 +1,281 @@
+.home-wrapper{
+    padding:0px 50px
+
+}
+
+table{
+    border-collapse: collapse; 
+    width:100%
+}
+
+.card-body h5{
+    font-size:12px
+}
+
+.card{
+    margin-bottom: 10%;
+    padding-bottom:20px;
+}
+
+.inner-card-content{
+    display:flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+
+.all-number{
+    display:flex;
+    padding:10px 12px;
+    border: 1px solid #1B1464;
+    border-radius: 50px;
+    width: 100%;
+    color:#1B1464;
+    font-size:12px;
+}
+
+.available-no{
+    display:flex;
+    padding:10px 15px;
+    border-radius: 50px;
+    border: 1px solid #24C977;
+    background-color: #24C977;
+    width: 100%;
+    color:#fff;
+    font-size:12px;
+}
+
+.all{
+    text-align:center;
+}
+
+.available{
+    text-align:center !important;
+}
+
+.content-title{
+    font-size:8px;
+    padding-top:16px
+}
+
+.all-critical{
+    display:flex;
+    padding:10px 15px;
+    border: 1px solid #FF4343F7;
+    background-color:#FF4343F7;
+    border-radius: 50px;
+    width: 100%;
+    color:#fff;
+    font-size:12px;
+}
+
+.all2-number{
+    display:flex;
+    padding:10px 15px;
+    border-radius: 50px;
+    border: 1px solid #1B1464;
+    width: 100%;
+    color:#000;
+    font-size:12px;
+}
+
+
+.all-inactive{
+    display:flex;
+    padding:10px 15px;
+    border: 1px solid #E0B237;
+    background-color:#E0B237;
+    border-radius: 50px;
+    width: 100%;
+    color:#fff;
+    font-size:12px;
+}
+
+.count{
+    font-size:37px;
+    font-weight:500;
+    color:#1B1464
+}
+
+#serach-bar input{
+    width:100%;
+    background-color: #F3F3F7;
+    border:none;
+    outline: none;
+    font-size:10px;
+    padding: 7px 5px;
+
+}
+
+.table-wrapper{
+    margin: 0px 50px
+}
+
+select {
+    font-size:10px;
+    padding-right:30px;
+    width:60%;
+    width:100%;
+    border: none;
+    outline:none;
+    padding: 5px 0px;
+    border-radius:2px;
+    border: 1px solid #525757
+
+}
+
+select option {
+    padding-top:20px;
+}
+
+
+
+table {
+    width: 100%;
+  }
+  
+  td, th {
+    padding: 5px;
+    font-size: 70%;
+    border-bottom: 1px solid #D3D3D3;
+  }
+
+  tbody > tr:last-child > td {
+    border-bottom: 0;
+  }
+
+  tbody > .header td{
+    border:none; /* and from here */
+}
+  
+ 
+
+thead td{
+    background-color: #F4F4F7;
+    color: #000 !important;  padding-left:40px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+}
+
+tbody td{
+    padding-left:40px;
+
+}
+
+.T-container{
+    border: 1px solid #D3D3D3;
+    padding-bottom: 20px;
+    margin-bottom:40px
+}
+
+.check-status button{
+    background-color:#49D3FF;
+    color:#1B1464;
+    border: none;
+    padding:7px 9px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+
+.action-btn{
+    display: flex
+}
+
+.servers{
+    color:#499DFF
+}
+
+.dot{
+    cursor: pointer;
+}
+
+.dot img{
+    width:50%;
+    height:auto;
+    margin-left:20px;
+}
+
+.pr-3{
+    margin-right:10px;
+}
+
+.app img{
+    width:3.5%;
+    height:auto;
+    margin-right:10px;
+}
+
+.status{
+    margin-right:20px;
+}
+
+.deacctivate{
+    padding-left:10px;
+    font-size:10px;
+    cursor: pointer;
+
+}
+
+.doc{
+    display:flex;
+    justify-content:right;
+    margin:5px 0px;
+}
+
+.doc img{
+    width:15px;
+    height:auto
+}
+
+.pdf{
+    margin-right:5px;
+}
+
+.xls{
+    margin-right:10px;
+}
+
+.pages{
+    font-size:8px;
+    font-weight:bold;
+    padding-top:8px;
+    margin-right:20px;
+}
+
+
+@media only screen and (max-width: 767px) {
+    #analysis-card{
+        display: flex;
+        justify-content:center;
+        text-align:center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .card{
+        margin-bottom:7%;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+    #analysis-card{
+        display: flex;
+        text-align:center;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .card{
+        margin-bottom:7%;
+    }
+
+    select{
+        margin-bottom:15px;
+    }
+
+
+}

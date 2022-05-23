@@ -1,0 +1,146 @@
+<div class="home-wrapper">
+    <div id="analysis-card" class="row mt-3">
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Application Status</h5>
+
+                    <div class="inner-card-content pt-3">
+                        <div class="all">
+                            <div class="all-number">10</div>
+                            <div class="content-title">All</div>
+                        </div>
+                        <div class="all">
+                            <div class="available-no">6</div>
+                            <div class="content-title">Available</div>
+                        </div>
+                        <div class="all">
+                            <div class="all-critical">4</div>
+                            <div class="content-title">Critical</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Servers</h5>
+
+                    <div class="inner-card-content pt-3">
+                        <div class="all">
+                            <div class="all2-number">4</div>
+                            <div class="content-title">All</div>
+                        </div>
+                        <div class="all">
+                            <div class="available-no">2</div>
+                            <div class="content-title">Active</div>
+                        </div>
+                        <div class="all">
+                            <div class="all-inactive">2</div>
+                            <div class="content-title">Inactive</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Healt Check Counts</h5>
+
+                    <div class="inner-card-content">
+                        <div class="all">
+                            <div class="count">60</div>
+                            <div class="content-title">counts</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card mt-3 pt-5">
+        <div class="table-wrapper">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="serach-bar"class="input-group mb-3">
+                        <input type="text" placeholder="Enter a search keyword"/>
+                    </div>
+                </div>
+                <div id="applicatio" class="col-md-2">
+                    <select>
+                        <option selected>All Application</option>
+                        <option value="1">Application name 1</option>
+                        <option value="2">Application name 2</option>
+                      </select>
+                </div>
+                <div class="col-md-2">
+                    <select>
+                        <option selected>All servers</option>
+                        <option value="1">server 1</option>
+                        <option value="2">server 2</option>
+                      </select>
+                </div>
+                <div class="col-md-2">
+                    <select>
+                        <option selected>Health check status</option>
+                        <option value="1">Healthy</option>
+                        <option value="2">Critical</option>
+                      </select>
+                </div>
+            </div>
+
+
+            <div class="T-container">
+                <div class="doc">
+                    <div class="pdf"><img src="assets/PDF.svg" alt=""></div>
+                    <div class="xls"><img src="assets/xls.svg" alt=""></div>
+                    <div class="pages">Showing 10 of 5000 Entries</div>
+                    
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr style="padding:40px">
+                                <td>S/N</td>
+                                <td>APPLICATION</td>
+                                <td>SERVERS MAPPED</td>
+                                <td>LAST SCAN DATE</td>
+                                <td>STATUS</td>
+                                <td>ACTION</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                *ngFor="let item of data | paginate : {itemsPerPage:5, currentPage:p} index as i">
+                                <td>{{ i + 1 }}</td>
+                                <td class="app"> <img src="assets/circle.png" alt="">{{item.application}}</td>
+                                <td class="servers">{{item.servers}}</td>
+                                <td>{{item.scan_date}}</td>
+                                <td class="status"><img class="pr-3" src="assets/check.png" alt="">{{item.status}}</td>
+                                <td>
+                                    <div class="action-btn">
+                                        <div class="check-status py-2">
+                                            <button type="button">View Result</button>
+                                        </div>
+                                    
+                                        <div class="btn-group dropstart">
+                                            <div class="dot" data-bs-toggle="dropdown">
+                                                <img src="assets/more.png" alt="">
+                                            </div>
+                                            <ul class="dropdown-menu deacctivate">
+                                              <li>Deactive</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,115 @@
+<div class="table-wrapper">
+    <div class="card mt-3 pt-5">
+        <div class="table-wrapper">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="serach-bar"class="input-group mb-3">
+                        <input type="text" placeholder="Enter a search keyword"/>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <select>
+                        <option selected>Active Status</option>
+                        <option value="1">Active</option>
+                        <option value="2">Inactive</option>
+                        <option value="2">All</option>
+                      </select>
+                </div>
+                <div class="col-md-7">
+                    <div class="create">
+                        <div class="check-status py-2">
+                            <button type="button" (click)="application()">Add Application</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="T-container">
+                <div class="doc">
+                    <div class="pdf"><img src="assets/PDF.svg" alt=""></div>
+                    <div class="xls"><img src="assets/xls.svg" alt=""></div>
+                    <div class="pages">Showing 10 of 5000 Entries</div>
+                    
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr style="padding:40px">
+                                <td>S/N</td>
+                                <td>APPLICATION NAME</td>
+                                <td>APPLICATION TYPE</td>
+                                <td>APPLICATION DCSC</td>
+                                <td>APPLICATION PORT</td>
+                                <td>END POINT</td>
+                                <td>HOST/SERVER</td>
+                                <td>ACTION</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr
+                                *ngFor="let item of data | paginate : {itemsPerPage:5, currentPage:p} index as i">
+                                <td>{{ i + 1 }}</td>
+                                <td class="notify"> <img src="assets/circle.png" alt="">{{item.application_name}}</td>
+                                <td>{{item.application_name}}</td>
+                                <td>{{item.application_dcsc}}</td>
+                                <td class="status">{{item.application_port}}</td>
+                                <td class="status">{{item.endpoint}}</td>
+                                <td class="status">{{item.host_server}}</td>
+                                <td>
+                                    <div class="action-btn">
+                                        <div class="check-status py-2">
+                                            <button type="button">Edit</button>
+                                        </div>
+                                    
+                                        <div class="btn-group dropstart">
+                                            <div class="dot" data-bs-toggle="dropdown">
+                                                <img src="assets/more.png" alt="">
+                                            </div>
+                                            <ul class="dropdown-menu deacctivate">
+                                              <li>Deactive</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="createapplication">
+    <div class="modal-mask">
+      <div class="modal-wrapper">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <p class="header">Define Application</p>
+
+                <div class="server-inputs">
+                    <div>Application Name <span class="name"><input type="text"></span></div>
+                    <div>Application Type <span><input type="text"></span></div>
+                    <div>Application Dcsc <span><input type="text"></span></div>
+                    <div>Application Port <span><input type="text"></span></div>
+                    <div>Endpoint <span class="storage"><input type="text"></span></div>
+                </div>
+
+              <div class="btns">
+                <div class="cancel" (click)="closeModal()">
+                  Cancel
+                </div>
+                <div class="check-status py-2">
+                  <button type="button">Create</button>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

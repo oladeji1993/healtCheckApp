@@ -1,0 +1,114 @@
+<nav id="myNav" class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><img src="assets/logo.svg" /></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div id="small-item" class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="resp-item" [routerLink]="['/Dashboard/home']" data-bs-toggle="collapse"
+          data-bs-target=".navbar-collapse.show">
+          <a routerLinkActive="is-active" aria-current="page">Home</a>
+        </li>
+        <li class="resp-item" [routerLink]="['/Dashboard/server']" data-bs-toggle="collapse"
+          data-bs-target=".navbar-collapse.show">
+          <a routerLinkActive="is-active">Server</a>
+        </li>
+        <li class="resp-item" [routerLink]="['/Dashboard/application']" data-bs-toggle="collapse"
+          data-bs-target=".navbar-collapse.show">
+          <a routerLinkActive="is-active">Application</a>
+        </li>
+        <li class="resp-item">
+          <div class="check-status py-2">
+            <button type="button" (click)="openModal()">Check Health Status</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="navigation">
+  <div class="nav-container pt-1 pb-1">
+    <div class="nav-item mr-5" [routerLink]="['/Dashboard/home']" routerLinkActive="is-active"><img
+        src="assets/home.svg" /><span class="pt-5">Home</span></div>
+    <div class="nav-item mr-5" [routerLink]="['/Dashboard/server']" routerLinkActive="is-active"><img
+        src="assets/server.svg" />Server</div>
+    <div class="nav-item" [routerLink]="['/Dashboard/application']" routerLinkActive="is-active"><img
+        src="assets/application.svg" />Application</div>
+  </div>
+  <div class="check-status py-2" (click)="openModal()">
+    <button type="button">Check Health Status</button>
+  </div>
+</div>
+
+<!-- Modal -->
+<div *ngIf="createModal">
+  <div class="modal-mask">
+    <div class="modal-wrapper">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p class="header">Conduct Health Check</p>
+            <div class="app-container">
+              <div>Applications</div>
+              <div class="check">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    All Applications
+                  </label>
+                </div>
+                <div class="mt-3">
+                  <div>Select Application</div>
+                  <div class="checklists">
+                    <div id="app-details" class="form-check" *ngFor="let item of data index as i">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                      <label class="form-check-label" for="flexCheckDefault">
+                        {{item.name}} {{i + 1}}
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="all-server">
+              <div class="app-container">
+                <div>Server</div>
+                <div class="check2">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                      All Server
+                    </label>
+                  </div>
+                  <div class="mt-3">
+                    <div>Select Application</div>
+                    <div class="checklists">
+                      <div id="app-details" class="form-check" *ngFor="let item of data index as i">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          {{item.server}} {{i + 1}}
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="btns">
+              <div class="cancel" (click)="closeModal()">
+                Cancel
+              </div>
+              <div class="check-status py-2">
+                <button type="button">Check Health Status</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
