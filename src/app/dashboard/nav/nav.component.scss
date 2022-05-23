@@ -170,6 +170,10 @@
         display:none;
     }
 
+    .check-status{
+        display:none;
+    }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -187,6 +191,10 @@
     }
 
     .navigation{
+        display:none;
+    }
+
+    .check-status{
         display:none;
     }
 }
